@@ -6,4 +6,7 @@ module.exports = function(app) {
     .get(student.login)
     .post(student.login);
 
+  app.route('/queryAllGrade')
+    .get(student.queryAllGrade)
+    .post(student.queryAllGrade);
 }
