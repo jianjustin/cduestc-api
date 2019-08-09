@@ -1,6 +1,11 @@
 {
   "cduestc" : {
-  	"url" : "http://125.71.5.44:1234/"
+  	"url" : "http://125.71.5.44:1234/",
+  	"params":{
+  		"type": "ln",
+  		"oper": "fainfo",
+  		"fajhh": "2539"
+  	}
   } 
 
 }

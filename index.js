@@ -1,4 +1,4 @@
-var express = require('express'),
+(function (exports, require, module, __filename, __dirname) { var express = require('express'),
     app = express(),
     proxy = require('http-proxy-middleware'),
     config = require('./config.json'),
@@ -19,3 +19,4 @@ routes(app);
 app.listen(port);
 
 console.log('cduestc RESTful API server started on: ' + port);
+});
