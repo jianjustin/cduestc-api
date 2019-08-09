@@ -11,8 +11,9 @@ exports.queryDomFromData = function (data) {
  *
  */
 exports.isLoginSuccess = function (dom){
-	var msg = dom.window.document.querySelector(".errorTop strong font").innerHTML;
-	return msg;
+	var msg = dom.window.document.querySelector(".errorTop strong font");
+	if(null == msg || "" == msg)return msg;
+	return msg.innerHTML;
 }
 
 /**

@@ -26,7 +26,7 @@ exports.queryAllGrade = function(req, res) {
     var params = config.cduestc.params;
     axiosUtils.get("/gradeLnAllAction.do", params, 1000, function(response) {
         var html = iconvLite.decode(response.data, "gb2312");
-        var listjsdomUtils.queryScoreList(jsdomUtils.queryDomFromData(html));
+        var list = listjsdomUtils.queryScoreList(jsdomUtils.queryDomFromData(html));
         res.status(200).send(jsdomUtils.returnData(200,html,list,"成绩查询成功"))
     }, function(error) {
         res.status(500).send(jsdomUtils.returnData(500,{},[],"服务器异常"))
