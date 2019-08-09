@@ -4,7 +4,9 @@
   "description": "a rest API of cduestc college",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --inspect-brk index.js"
+    "start": "nodemon index.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,8 @@
   "homepage": "https://github.com/jianjustin/cduestc-api#readme",
   "devDependencies": {
     "http-proxy-middleware": "^0.19.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "vuepress": "^1.0.3"
   },
   "dependencies": {
     "@3846masa/axios-cookiejar-support": "^0.5.0",
@@ -27,6 +30,7 @@
     "iconv-lite": "^0.5.0",
     "jsdom": "^15.1.1",
     "node-axios-cookiejar": "0.0.3",
-    "tough-cookie": "^3.0.1"
+    "tough-cookie": "^3.0.1",
+    "vuepress-theme-api": "^0.2.1"
   }
 }
