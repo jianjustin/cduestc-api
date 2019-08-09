@@ -8,8 +8,8 @@ var iconvLite = require('iconv-lite');
 
 exports.login = function(req, res) {
     var params = {};
-    params.zjh = req.param('zjh');
-    params.mm = req.param('mm');
+    params.zjh = req.param('username');
+    params.mm = req.param('password');
     axiosUtils.get("/loginAction.do", params, 10000, function(response) {
         var html = iconvLite.decode(response.data, "gb2312");
         var msg = jsdomUtils.isLoginSuccess(jsdomUtils.queryDomFromData(html));
@@ -24,10 +24,10 @@ exports.login = function(req, res) {
 
 exports.queryAllGrade = function(req, res) {
     var params = config.cduestc.params;
-    axiosUtils.get("/gradeLnAllAction.do", params, 1000, function(response) {
+    axiosUtils.get("/gradeLnAllAction.do", params, 10000, function(response) {
         var html = iconvLite.decode(response.data, "gb2312");
-        var list = listjsdomUtils.queryScoreList(jsdomUtils.queryDomFromData(html));
-        res.status(200).send(jsdomUtils.returnData(200,html,list,"成绩查询成功"))
+        var list = jsdomUtils.queryScoreList(jsdomUtils.queryDomFromData(html));
+        res.status(200).send(jsdomUtils.returnData(200,{},list,"成绩查询成功"))
     }, function(error) {
         res.status(500).send(jsdomUtils.returnData(500,{},[],"服务器异常"))
     });

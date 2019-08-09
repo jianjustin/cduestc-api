@@ -5,7 +5,16 @@
   		"type": "ln",
   		"oper": "fainfo",
   		"fajhh": "2539"
+  	},
+  	"scoreAttribute":{
+  		"课程号": "courseNumber",
+  		"课序号": "courseNo",
+  		"课程名": "courseName",
+  		"英文课程名": "courseEnName",
+  		"学分": "courseCredit",
+  		"课程属性": "courseAttr",
+  		"成绩": "courseScore",
+  		"未通过原因": "courseNotPassReason"
   	}
   } 
-
 }
